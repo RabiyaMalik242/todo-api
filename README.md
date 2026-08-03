@@ -61,7 +61,7 @@ curl -i -X DELETE http://localhost:8000/tasks/1   # 204, empty body
 
 ## Swagger UI
 
-FastAPI generates interactive docs automatically at `/docs` — no extra setup. Every endpoint above is listed there with a "Try it out" button that fires real requests.
+FastAPI generates interactive docs automatically at `/docs` - no extra setup. Every endpoint above is listed there with a "Try it out" button that fires real requests.
 
 ![Swagger UI showing all Task API endpoints](swagger-screenshot.png)
 
