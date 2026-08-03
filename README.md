@@ -7,7 +7,7 @@ A small CRUD API for managing a to-do list - built with **Python + FastAPI**, in
 ## What this is
 
 A minimal REST API that lets a client create, read, update, and delete tasks.
-Data lives in a plain Python list — it resets every time the server restarts. That's intentional (see *The mortality experiment* below); a database arrives next week.
+Data lives in a plain Python list - it resets every time the server restarts. That's intentional (see *The mortality experiment* below); a database arrives next week.
 
 ## How to install and run
 
@@ -33,9 +33,9 @@ Then open **http://localhost:8000/docs** for interactive Swagger UI, or hit the 
 | POST   | `/reset`      | Restore the 3 example tasks           | 200     | —             |
 
 **Extras on `GET /tasks`:**
-- `?done=true|false` — filter by completion
-- `?search=milk` — case-insensitive title search
-- `?limit=2&offset=2` — pagination
+- `?done=true|false` - filter by completion
+- `?search=milk` - case-insensitive title search
+- `?limit=2&offset=2` - pagination
 
 Every error response has the shape `{ "error": "..." }`.
 
@@ -61,7 +61,7 @@ curl -i -X DELETE http://localhost:8000/tasks/1   # 204, empty body
 
 ## Swagger UI
 
-FastAPI generates interactive docs automatically at `/docs` — no extra setup. Every endpoint above is listed there with a "Try it out" button that fires real requests.
+FastAPI generates interactive docs automatically at `/docs` - no extra setup. Every endpoint above is listed there with a "Try it out" button that fires real requests.
 
 *(Screenshot placeholder - add yours after running the server locally: open `/docs`, exercise the full CRUD cycle, and paste a screenshot here.)*
 
