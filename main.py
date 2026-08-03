@@ -1,8 +1,8 @@
 """
-Task API — a small CRUD API for managing a to-do list.
+Task API - a small CRUD API for managing a to-do list.
 FlyRank Internship · Backend Track · W2 · A1
 
-In-memory storage only (no database) — data resets on restart, by design.
+In-memory storage only (no database) - data resets on restart, by design.
 Run with: uvicorn main:app --reload --port 8000
 Docs at:  http://localhost:8000/docs
 """
@@ -18,7 +18,7 @@ app = FastAPI(
 )
 
 # ---------------------------------------------------------------------------
-# In-memory "database" — just a Python list. Gone on restart (that's Week 3).
+# In-memory "database" - just a Python list. Gone on restart (that's Week 3).
 # ---------------------------------------------------------------------------
 
 DEFAULT_TASKS = [
@@ -72,7 +72,7 @@ def error(msg: str):
 
 
 # ---------------------------------------------------------------------------
-# Stage 1 — root & health
+# Stage 1 - root and health
 # ---------------------------------------------------------------------------
 
 @app.get("/", tags=["meta"], summary="API description")
@@ -86,7 +86,7 @@ def health():
 
 
 # ---------------------------------------------------------------------------
-# Stage 2 — read
+# Stage 2 - read
 # ---------------------------------------------------------------------------
 
 @app.get("/tasks", tags=["tasks"], summary="List tasks (filter/search/paginate)")
@@ -105,7 +105,7 @@ def list_tasks(
         needle = search.lower()
         result = [t for t in result if needle in t["title"].lower()]
 
-    # Pagination (stretch goal) — real APIs never return "everything"; it
+    # Pagination (stretch goal) - real APIs never return "everything"; it
     # protects both server and client from unbounded response sizes.
     result = result[offset:]
     if limit is not None:
@@ -130,7 +130,7 @@ def stats():
 
 
 # ---------------------------------------------------------------------------
-# Stage 3 — create
+# Stage 3 - create
 # ---------------------------------------------------------------------------
 
 @app.post("/tasks", status_code=201, tags=["tasks"], summary="Create a task")
@@ -143,7 +143,7 @@ def create_task(payload: TaskCreate):
 
 
 # ---------------------------------------------------------------------------
-# Stage 4 — update & delete
+# Stage 4 - update and delete
 # ---------------------------------------------------------------------------
 
 @app.put("/tasks/{task_id}", tags=["tasks"], summary="Update a task")
@@ -173,7 +173,7 @@ def delete_task(task_id: int):
 
 
 # ---------------------------------------------------------------------------
-# Extras — seed & reset (handy for demos, and for the mortality experiment)
+# Extras - seed and reset (handy for demos, and for the mortality experiment)
 # ---------------------------------------------------------------------------
 
 @app.post("/reset", tags=["meta"], summary="Restore the 3 example tasks")
